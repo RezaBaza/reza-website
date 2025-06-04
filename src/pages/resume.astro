@@ -1,0 +1,35 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Reza Bazargan – Resume',
+  description: 'Professional resume of Reza Bazargan.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="prose dark:prose-invert max-w-3xl mx-auto my-16 px-4">
+    <h1 class="text-3xl font-bold">Resume</h1>
+    <p>
+      I'm an experienced data strategist, PhD in mathematics, and AI transformation leader. My work bridges technical excellence with real-world organizational value.
+    </p>
+
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Languages:</strong> Python, SQL</li>
+      <li><strong>Frameworks:</strong> Hugging Face, OpenAI, scikit-learn</li>
+      <li><strong>BI & Visualization:</strong> Power BI, Tableau, Looker, HEX</li>
+      <li><strong>Leadership:</strong> AI strategy, KPI frameworks, cross-functional mentoring</li>
+    </ul>
+
+    <h2>Experience</h2>
+    <ul>
+      <li><strong>Governo Insikt AB (2025–)</strong> – Senior Data Strategist</li>
+      <li><strong>Mentimeter (2022–2024)</strong> – Analytics Manager</li>
+      <li><strong>TallinkSilja AB (2016–2022)</strong> – Head of Revenue & Growth Analytics</li>
+    </ul>
+
+    <h2>Download</h2>
+    <p><a href="/RezaBazargan_CV.pdf" target="_blank" class="underline text-primary-500">Download CV (PDF)</a></p>
+  </section>
+</Layout>

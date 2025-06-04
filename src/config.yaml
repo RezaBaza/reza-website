@@ -1,6 +1,6 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: Reza Bazargan
+  site: 'https://rezabazargan.com'
   base: '/'
   trailingSlash: false
 
@@ -9,22 +9,22 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Reza Bazargan
+    template: '%s — Reza Bazargan'
+  description: "Personal website, resume, and portfolio of Reza Bazargan."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Reza Bazargan
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@onwidget'
-    site: '@onwidget'
+    handle: ''
+    site: '@reza_bazargan'
     cardType: summary_large_image
 
 i18n:

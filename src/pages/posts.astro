@@ -1,0 +1,27 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+const metadata = {
+  title: 'Posts by Reza Bazargan',
+  description: 'Essays, articles, and thoughts on AI, data strategy, and analytics.',
+};
+---
+
+<Layout metadata={metadata}>
+  <section class="max-w-3xl mx-auto px-4 my-16">
+    <h1 class="text-3xl font-bold mb-6">Posts</h1>
+    <p class="mb-8 text-muted">Posts, essays, and thoughts — more coming soon.</p>
+
+    <div class="space-y-8">
+      <article class="border-l-4 border-blue-500 pl-4">
+        <h2 class="text-xl font-semibold">How I Think About AI Strategy</h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400">Coming soon – a personal take on balancing AI capabilities with organizational readiness.</p>
+      </article>
+
+      <article class="border-l-4 border-blue-500 pl-4">
+        <h2 class="text-xl font-semibold">Lessons from Building NLP Pipelines</h2>
+        <p class="text-sm text-gray-500 dark:text-gray-400">A technical reflection on the realities of production-grade language models.</p>
+      </article>
+    </div>
+  </section>
+</Layout>
