@@ -11,11 +11,11 @@ const metadata = {
 <Layout metadata={metadata}>
   <div class="relative overflow-hidden">
     <!-- 🔵 Animated background layer -->
-    <div class="absolute inset-0 z-0 animate-gradient bg-gradient-to-r from-purple-400 via-blue-500 to-indigo-500 opacity-30 blur-2xl"
+    <div class="absolute inset-0 z-0 animate-gradient bg-gradient-to-r from-purple-400 via-blue-500 to-indigo-500 opacity-30 blur-2xl pointer-events-none"
   style="background-size: 200% 200%;"></div>
 
     <!-- 🧱 Content layer -->
-  <canvas id="particle-canvas" class="fixed inset-0 z-0 w-full h-full"></canvas>
+  <canvas id="particle-canvas" class="fixed inset-0 z-0 w-full h-full pointer-events-none"></canvas>
   
   <section class="prose dark:prose-invert max-w-3xl mx-auto my-16 px-4 text-center">
     <h1 class="text-4xl font-bold">Hi, I’m Reza 👋</h1>
