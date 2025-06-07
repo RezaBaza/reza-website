@@ -1,5 +1,5 @@
 site:
-  name: Welcome to this site!
+  name: Welcome!
   site: 'https://rezabazargan.com'
   base: '/'
   trailingSlash: false

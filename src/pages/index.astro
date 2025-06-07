@@ -11,51 +11,162 @@ const metadata = {
 <Layout metadata={metadata}>
   <div class="relative overflow-hidden">
     <!-- 🔵 Animated background layer -->
-    <div class="absolute inset-0 z-0 animate-gradient bg-gradient-to-r from-purple-400 via-blue-500 to-indigo-500 opacity-30 blur-2xl pointer-events-none"
-  style="background-size: 200% 200%;"></div>
+    <div class="absolute inset-0 z-0 animate-gradient bg-gradient-to-r from-purple-400 via-blue-500 to-indigo-500 opacity-30 blur-2xl"
+      style="background-size: 200% 200%;"></div>
 
-    <!-- 🧱 Content layer -->
-  <canvas id="particle-canvas" class="fixed inset-0 z-0 w-full h-full pointer-events-none"></canvas>
-  
-  <section class="prose dark:prose-invert max-w-3xl mx-auto my-16 px-4 text-center">
-    <h1 class="text-4xl font-bold">Hi, I’m Reza 👋</h1>
-    <p class="text-lg">Data strategist · AI specialist · PhD in Mathematics</p>
-    <p class="mt-4">
-      I help organizations unlock value through analytics, AI, and large language models.
-      Passionate about RAG, LLM applications, and actionable data strategy.
-    </p>
+    <!-- 🧱 Canvas Particle Layer -->
+    <canvas id="particle-canvas" class="fixed inset-0 z-0 w-full h-full pointer-events-none"></canvas>
 
-    <p class="mt-6">
-      <a href="/posts" class="underline text-blue-600 dark:text-blue-400">Read My Posts</a> &nbsp;·&nbsp;
-      <a href="/resume" class="underline text-blue-600 dark:text-blue-400">View My Resume</a>
-    </p>
+    <!-- 👤 Main Content -->
+    <section class="relative z-10 prose dark:prose-invert max-w-3xl mx-auto my-16 px-4 text-center">
+      <h1 class="text-4xl font-bold">Hi, I’m Reza 👋</h1>
+      <p class="text-lg">Data Strategist & Analyst · AI specialist · PhD in Mathematics</p>
 
-    <p class="mt-6 text-neutral-500 dark:text-neutral-400">
-      Based in Stockholm | <a href="mailto:reza.bazargan@governo.se" class="text-blue-600 dark:text-blue-400">reza.bazargan@governo.se</a>
-    </p>
+      <p class="mt-4 text-left">
+        Senior Data Analytics Leader with Ph.D. in Mathematics and 10+ years of experience transforming
+        business operations through advanced analytics across Nordic markets. Proven track records in:
+      </p>
 
-    <div class="flex justify-center gap-6 mt-6 text-2xl">
+      <ul class="text-left mt-4 list-disc list-inside space-y-2">
+        <li>
+          <strong>Data Science and Analytics Leadership:</strong> Built and led cross-functional analytics teams delivering
+          multi-million revenue impact through ML models and predictive frameworks.
+        </li>
+        <li>
+          <strong>Client Advisory:</strong> Strategic C-suite consultation on data-driven initiatives, translating complex insights
+          into actionable business recommendations.
+        </li>
+        <li>
+          <strong>Technical Innovation:</strong> Design and implementation of scalable ML solutions for customer behavior
+          analysis and revenue optimization.
+        </li>
+        <li>
+          <strong>Team Development:</strong> Mentored high-performing analytics teams, establishing data-driven culture across
+          multiple organizations.
+        </li>
+        <li>
+          <strong>Stakeholder Management:</strong> Successfully led cross-functional projects involving product, sales,
+          marketing and executive stakeholders.
+        </li>
+      </ul>
+     <h2 class="text-2xl font-semibold mt-12 text-center">Technical Skills</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 text-left">
+  <!-- Advanced Analytics -->
+  <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-4 rounded-2xl shadow-lg">
+    <h3 class="font-semibold text-lg text-blue-400 mb-2">Advanced Analytics</h3>
+    <ul class="list-none space-y-2 text-sm text-neutral-200">
+      <li class="flex items-center gap-2">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" class="w-5 h-5" />
+        Python
+      </li>
+      <li class="flex items-center gap-2">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL logo" class="w-5 h-5" />
+        SQL
+      </li>
+      <li class="flex items-center gap-2">
+        <img src="https://cdn.simpleicons.org/openai/00aaff" alt="Machine Learning" class="w-5 h-5" />
+        Machine Learning
+      </li>
+      <li class="flex items-center gap-2">
+        <img src="https://cdn.simpleicons.org/openai" alt="Generative AI logo" class="w-5 h-5" />
+        Generative AI
+      </li>
+    </ul>
+  </div>
 
-      <a href="https://github.com/RezaBaza" 
-      target="_blank" aria-label="GitHub" 
-      class="hover:text-blue-600 dark:hover:text-blue-400">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24"><path d="M12 .5C5.373.5 0 5.873 0 12.5a12.015 12.015 0 008.207 11.39c.6.111.793-.26.793-.577v-2.252c-3.338.726-4.042-1.61-4.042-1.61a3.177 3.177 0 00-1.33-1.752c-1.088-.743.083-.728.083-.728a2.512 2.512 0 011.83 1.232 2.55 2.55 0 003.484 1 2.54 2.54 0 01.758-1.597c-2.664-.303-5.467-1.332-5.467-5.926a4.638 4.638 0 011.235-3.209 4.307 4.307 0 01.117-3.166s1.006-.322 3.3 1.23a11.407 11.407 0 016 0c2.294-1.552 3.297-1.23 3.297-1.23a4.307 4.307 0 01.118 3.166 4.64 4.64 0 011.234 3.209c0 4.603-2.807 5.62-5.479 5.915a2.86 2.86 0 01.818 2.222v3.293c0 .32.19.694.8.576A12.015 12.015 0 0024 12.5C24 5.873 18.627.5 12 .5z"/></svg>
-      </a>
+  <!-- Business Intelligence -->
+  <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-4 rounded-2xl shadow-lg">
+    <h3 class="font-semibold text-lg text-blue-400 mb-2">Business Intelligence</h3>
+    <ul class="list-none space-y-2 text-sm text-neutral-200">
+      <li class="flex items-center gap-2">
+        <img src="https://cdn.simpleicons.org/tableau" alt="Tableau logo" class="w-5 h-5" />
+        Tableau
+      </li>
+      <li class="flex items-center gap-2">
+        <img src="https://cdn.simpleicons.org/looker" alt="Looker logo" class="w-5 h-5" />
+        Looker
+      </li>
+      <li class="flex items-center gap-2">
+        <img src="https://cdn.simpleicons.org/google" alt="Looker Studio logo" class="w-5 h-5" />
+        Looker Studio
+      </li>
+      <li class="flex items-center gap-2">
+        <img src="https://cdn.simpleicons.org/plotly" alt="Plotly logo" class="w-5 h-5" />
+        Python Viz: Seaborn, Plotly, Matplotlib
+      </li>
+      <li class="flex items-center gap-2">
+        <img src="https://img.icons8.com/color/48/power-bi.png" alt="Power BI logo" class="w-5 h-5" />
+        Power BI
+      </li>
+    </ul>
+  </div>
 
-      <a
-  href="https://www.linkedin.com/in/mrezabazargan/"
-  target="_blank"
-  aria-label="LinkedIn"
-  class="hover:text-blue-600 dark:hover:text-blue-400"
->
-  <Fragment set:html={`<svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 448 512">
-    <path d="M100.28 448H7.4V148.9h92.88zm-46.44-340C24.15 108 0 83.87 0 53.61 0 23.39 24.15 0 53.84 0 83.67 0 108 23.39 108 53.61c0 30.26-24.32 54.39-54.16 54.39zM447.9 448h-92.4V302.4c0-34.7-12.4-58.4-43.4-58.4-23.6 0-37.6 15.8-43.7 31.1-2.3 5.5-2.8 13.2-2.8 21V448h-92.4s1.2-246.6 0-272h92.4v38.5c12.3-19 34.3-45.9 83.3-45.9 60.8 0 106.5 39.7 106.5 125.1V448z"/>
-  </svg>`} />
-</a>
+  <!-- Marketing Tech Stack -->
+  <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-4 rounded-2xl shadow-lg">
+    <h3 class="font-semibold text-lg text-blue-400 mb-2">Marketing Tech Stack</h3>
+    <ul class="list-none space-y-2 text-sm text-neutral-200">
+      <li class="flex items-center gap-2">
+        <img src="https://cdn.simpleicons.org/salesforce" alt="Salesforce logo" class="w-5 h-5" />
+        Salesforce
+      </li>
+      <li class="flex items-center gap-2">
+        <img src="https://cdn.simpleicons.org/googleanalytics" alt="Google Analytics logo" class="w-5 h-5" />
+        Google Analytics
+      </li>
+      <li class="flex items-center gap-2">
+        <img src="https://img.icons8.com/ios-filled/50/adobe.png" alt="Adobe logo" class="w-5 h-5" />
+        Adobe Analytics
+      </li>
+      <li class="flex items-center gap-2">
+        <img src="https://seeklogo.com/images/6/6sense-logo-7F071C92E0-seeklogo.com.png" alt="6sense logo" class="w-5 h-5" />
+        6sense
+      </li>
+      <li class="flex items-center gap-2">
+        <img src="https://cdn.simpleicons.org/googleads" alt="Google Ads logo" class="w-5 h-5" />
+        Google Ads
+      </li>
+      <li class="flex items-center gap-2">
+        <img src="https://cdn.simpleicons.org/mixpanel" alt="Mixpanel logo" class="w-5 h-5" />
+        Mixpanel
+      </li>
+      <li class="flex items-center gap-2">
+        <img src="https://cdn.simpleicons.org/hubspot" alt="HubSpot logo" class="w-5 h-5" />
+        HubSpot Revenue Ops (Certified)
+      </li>
+    </ul>
+  </div>
+</div>
 
 
-    </div>
-  </section>
-<script src="/js/particles.js" defer></script>
+      <p class="mt-6">
+        <a href="/posts" class="underline text-blue-600 dark:text-blue-400">Read My Posts</a> &nbsp;·&nbsp;
+        <a href="/resume" class="underline text-blue-600 dark:text-blue-400">View My Resume</a>
+      </p>
 
+      <p class="mt-6 text-neutral-500 dark:text-neutral-400">
+        Based in Stockholm | 
+        <a href="mailto:Reza.Baza@gmail.com" class="text-blue-600 dark:text-blue-400">Reza.Baza@gmail.com</a>
+      </p>
+
+      <div class="flex justify-center gap-6 mt-6 text-2xl">
+        <!-- GitHub Icon -->
+        <a href="https://github.com/RezaBaza" target="_blank" aria-label="GitHub"
+          class="hover:text-blue-600 dark:hover:text-blue-400">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
+            <path d="M12 .5C5.373.5 0 5.873 0 12.5a12.015 12.015 0 008.207 11.39c.6.111.793-.26.793-.577v-2.252c-3.338.726-4.042-1.61-4.042-1.61a3.177 3.177 0 00-1.33-1.752c-1.088-.743.083-.728.083-.728a2.512 2.512 0 011.83 1.232 2.55 2.55 0 003.484 1 2.54 2.54 0 01.758-1.597c-2.664-.303-5.467-1.332-5.467-5.926a4.638 4.638 0 011.235-3.209 4.307 4.307 0 01.117-3.166s1.006-.322 3.3 1.23a11.407 11.407 0 016 0c2.294-1.552 3.297-1.23 3.297-1.23a4.307 4.307 0 01.118 3.166 4.64 4.64 0 011.234 3.209c0 4.603-2.807 5.62-5.479 5.915a2.86 2.86 0 01.818 2.222v3.293c0 .32.19.694.8.576A12.015 12.015 0 0024 12.5C24 5.873 18.627.5 12 .5z"/>
+          </svg>
+        </a>
+
+        <!-- LinkedIn Icon -->
+        <a href="https://www.linkedin.com/in/mrezabazargan/" target="_blank" aria-label="LinkedIn"
+          class="hover:text-blue-600 dark:hover:text-blue-400">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 448 512">
+            <path d="M100.28 448H7.4V148.9h92.88zm-46.44-340C24.15 108 0 83.87 0 53.61 0 23.39 24.15 0 53.84 0 83.67 0 108 23.39 108 53.61c0 30.26-24.32 54.39-54.16 54.39zM447.9 448h-92.4V302.4c0-34.7-12.4-58.4-43.4-58.4-23.6 0-37.6 15.8-43.7 31.1-2.3 5.5-2.8 13.2-2.8 21V448h-92.4s1.2-246.6 0-272h92.4v38.5c12.3-19 34.3-45.9 83.3-45.9 60.8 0 106.5 39.7 106.5 125.1V448z"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <script src="/js/particles.js" defer></script>
+  </div>
 </Layout>
