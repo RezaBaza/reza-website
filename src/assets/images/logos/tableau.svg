@@ -1,7 +1,26 @@
 <svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
-  <rect width="24" height="24" x="52" y="0" fill="#2c5cc5"/>
-  <rect width="24" height="24" x="52" y="52" fill="#e97627"/>
-  <rect width="24" height="24" x="52" y="104" fill="#f9ba00"/>
-  <rect width="24" height="24" x="0" y="52" fill="#2c5cc5"/>
-  <rect width="24" height="24" x="104" y="52" fill="#2c5cc5"/>
+  <g fill="#2c5cc5">
+    <rect x="60" y="4" width="8" height="24"/>
+    <rect x="52" y="12" width="24" height="8"/>
+    <rect x="60" y="100" width="8" height="24"/>
+    <rect x="52" y="108" width="24" height="8"/>
+    <rect x="4" y="60" width="24" height="8"/>
+    <rect x="12" y="52" width="8" height="24"/>
+    <rect x="100" y="60" width="24" height="8"/>
+    <rect x="108" y="52" width="8" height="24"/>
+  </g>
+  <g fill="#e97627">
+    <rect x="60" y="44" width="8" height="32"/>
+    <rect x="44" y="60" width="32" height="8"/>
+  </g>
+  <g fill="#f9ba00">
+    <rect x="30" y="30" width="6" height="16"/>
+    <rect x="27" y="37" width="16" height="6"/>
+    <rect x="92" y="30" width="6" height="16"/>
+    <rect x="89" y="37" width="16" height="6"/>
+    <rect x="30" y="82" width="6" height="16"/>
+    <rect x="27" y="89" width="16" height="6"/>
+    <rect x="92" y="82" width="6" height="16"/>
+    <rect x="89" y="89" width="16" height="6"/>
+  </g>
 </svg>
