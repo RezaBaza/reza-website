@@ -1,3 +1,4 @@
+// Particle effect for background (sky blue, subtle)
 const canvas = document.getElementById('particle-canvas');
 const ctx = canvas.getContext('2d');
 let width, height, particles;
@@ -11,7 +12,7 @@ function createParticles(count) {
   return Array.from({ length: count }, () => ({
     x: Math.random() * width,
     y: Math.random() * height,
-    radius: Math.random() * 1.8 + 0.5,
+    radius: Math.random() * 1.5 + 0.7, // Subtle radius
     dx: (Math.random() - 0.5) * 0.5,
     dy: (Math.random() - 0.5) * 0.5,
   }));
@@ -19,7 +20,7 @@ function createParticles(count) {
 
 function drawParticles() {
   ctx.clearRect(0, 0, width, height);
-  ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+  ctx.fillStyle = 'rgba(244, 114, 182, 0.35)'; // Sky blue (tailwind sky-400)
   for (const p of particles) {
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
