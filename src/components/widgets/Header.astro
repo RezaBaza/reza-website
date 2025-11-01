@@ -2,16 +2,26 @@
 import { Icon } from 'astro-icon/components';
 import Logo from '~/components/Logo.astro';
 import ToggleTheme from '~/components/common/ToggleTheme.astro';
+import LanguageSwitcher from '~/components/common/LanguageSwitcher.astro';
 import Button from '~/components/ui/Button.astro';
 
 import { getHomePermalink, getAsset, trimSlash } from '~/utils/permalinks';
+import { getLanguageFromPath, getTranslation, getAlternatePath } from '~/utils/translations';
 
 const currentPath = `/${trimSlash(new URL(Astro.url).pathname)}`;
+const lang = getLanguageFromPath(currentPath);
+const t = getTranslation(lang);
+
+const getNavPath = (basePath: string) => {
+  if (lang === 'fa') return `/fa${basePath}`;
+  if (lang === 'sv') return `/sv${basePath}`;
+  return basePath;
+};
 
 const links = [
-  { text: 'Home', href: '/' },
-  { text: 'Posts', href: '/posts' },
-  { text: 'Resume', href: '/resume' },
+  { text: t.nav.home, href: getNavPath('/') },
+  { text: t.nav.posts, href: getNavPath('/posts') },
+  { text: t.nav.resume, href: getNavPath('/resume') },
 ];
 ---
 <header
@@ -41,6 +51,7 @@ const links = [
 
     <!-- Optional Theme Toggle -->
     <div class="hidden md:flex items-center space-x-4">
+      <LanguageSwitcher />
       <ToggleTheme iconClass="w-5 h-5" />
       <a
         class="text-muted hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg p-2.5"

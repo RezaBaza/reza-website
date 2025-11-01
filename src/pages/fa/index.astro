@@ -3,12 +3,12 @@ import Layout from '~/layouts/PageLayout.astro';
 import Image from '~/components/common/Image.astro';
 import { getTranslation, type Language } from '~/utils/translations';
 
-const lang: Language = 'en';
+const lang: Language = 'fa';
 const t = getTranslation(lang);
 
 const metadata = {
-  title: 'Reza Bazargan – Data Strategist & AI Specialist',
-  description: 'Personal website of Reza Bazargan – Data Scientist and PhD in Mathematics.',
+  title: 'رضا بازارگان – استراتژیست داده و متخصص هوش مصنوعی',
+  description: 'وبسایت شخصی رضا بازارگان – دانشمند داده و دکترای ریاضی.',
   ignoreTitleTemplate: true,
 };
 ---
@@ -23,7 +23,7 @@ const metadata = {
     <canvas id="particle-canvas" class="fixed inset-0 z-50 w-full h-full pointer-events-none"></canvas>
 
     <!-- 👤 Main Content -->
-    <section class="relative z-10 prose dark:prose-invert max-w-3xl mx-auto my-16 px-4 text-center">
+    <section class="relative z-10 prose dark:prose-invert max-w-3xl mx-auto my-16 px-4 text-center" dir="rtl">
       <h1 class="text-4xl font-bold">{t.home.title}</h1>
       <p class="text-lg">{t.home.subtitle}</p>
 
@@ -38,32 +38,32 @@ const metadata = {
         </a>
       </div>
 
-      <p class="mt-4 text-left">
+      <p class="mt-4 text-right">
         {t.home.intro}
       </p>
 
-      <ul class="text-left mt-4 list-disc list-inside space-y-2">
+      <ul class="text-right mt-4 list-disc list-inside space-y-2">
         <li>
-          <strong>Data Science and Analytics Leadership:</strong> {t.home.leadership}
+          <strong>رهبری علوم داده و تحلیل:</strong> {t.home.leadership}
         </li>
         <li>
-          <strong>Client Advisory:</strong> {t.home.advisory}
+          <strong>مشاوره به مشتریان:</strong> {t.home.advisory}
         </li>
         <li>
-          <strong>Technical Innovation:</strong> {t.home.innovation}
+          <strong>نوآوری فنی:</strong> {t.home.innovation}
         </li>
         <li>
-          <strong>Team Development:</strong> {t.home.teamDev}
+          <strong>توسعه تیم:</strong> {t.home.teamDev}
         </li>
         <li>
-          <strong>Stakeholder Management:</strong> {t.home.stakeholder}
+          <strong>مدیریت ذینفعان:</strong> {t.home.stakeholder}
         </li>
       </ul>
      <h2 class="text-2xl font-semibold mt-12 text-center">{t.home.technicalSkills}</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 text-left">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6 text-right">
   <!-- Advanced Analytics -->
   <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-4 rounded-2xl shadow-lg">
-    <h3 class="font-semibold text-lg text-blue-400 mb-2">{t.home.advancedAnalytics}</h3>
+    <h3 class="font-semibold text-lg text-blue-400 mb-2">Advanced Analytics</h3>
     <ul class="list-none space-y-2 text-sm text-neutral-200">
       <li class="flex items-center gap-2">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python logo" class="w-5 h-5" />
@@ -86,7 +86,7 @@ const metadata = {
 
   <!-- Business Intelligence -->
   <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-4 rounded-2xl shadow-lg">
-    <h3 class="font-semibold text-lg text-blue-400 mb-2">{t.home.businessIntelligence}</h3>
+    <h3 class="font-semibold text-lg text-blue-400 mb-2">Business Intelligence</h3>
     <ul class="list-none space-y-2 text-sm text-neutral-200">
       <li class="flex items-center gap-2">
         <Image src="~/assets/images/logos/tableau.svg" alt="Tableau logo" width={20} height={20} />
@@ -113,7 +113,7 @@ const metadata = {
 
   <!-- Marketing Tech Stack -->
   <div class="bg-gradient-to-br from-slate-800 to-slate-900 p-4 rounded-2xl shadow-lg">
-    <h3 class="font-semibold text-lg text-blue-400 mb-2">{t.home.marketingTech}</h3>
+    <h3 class="font-semibold text-lg text-blue-400 mb-2">Marketing Tech Stack</h3>
     <ul class="list-none space-y-2 text-sm text-neutral-200">
       <li class="flex items-center gap-2">
         <img src="https://cdn.simpleicons.org/salesforce" alt="Salesforce logo" class="w-5 h-5" />
@@ -150,7 +150,7 @@ const metadata = {
 
       <p class="mt-6">
         <a href="/posts" class="underline text-blue-600 dark:text-blue-400">{t.home.readPosts}</a> &nbsp;·&nbsp;
-        <a href="/resume" class="underline text-blue-600 dark:text-blue-400">{t.home.viewResume}</a>
+        <a href="/fa/resume" class="underline text-blue-600 dark:text-blue-400">{t.home.viewResume}</a>
       </p>
 
       <p class="mt-6 text-neutral-500 dark:text-neutral-400">
@@ -180,3 +180,4 @@ const metadata = {
     <script src="/js/particles.js" defer></script>
   </div>
 </Layout>
+

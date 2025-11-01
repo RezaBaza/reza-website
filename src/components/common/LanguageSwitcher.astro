@@ -1,0 +1,91 @@
+---
+import { getLanguageFromPath, getAlternatePath, type Language } from '~/utils/translations';
+
+const currentPath = Astro.url.pathname;
+const currentLang: Language = getLanguageFromPath(currentPath);
+const alternateLang: Language = currentLang === 'en' ? 'sv' : 'en';
+const alternatePath = getAlternatePath(currentPath, alternateLang);
+
+const languages = [
+  { code: 'en', name: 'English', flag: '🇬🇧' },
+  { code: 'sv', name: 'Svenska', flag: '🇸🇪' },
+  { code: 'fa', name: 'فارسی', flag: '🇮🇷' },
+];
+---
+
+<div class="relative inline-block">
+  <select
+    id="language-selector"
+    class="appearance-none bg-transparent border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-1.5 pr-8 text-sm font-medium text-default hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500"
+    value={currentLang}
+    data-current-path={currentPath}
+  >
+    {languages.map((lang) => (
+      <option value={lang.code} selected={lang.code === currentLang}>
+        {lang.flag} {lang.name}
+      </option>
+    ))}
+  </select>
+  
+  <!-- Custom dropdown arrow -->
+  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
+    <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+    </svg>
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    let isSetup = false;
+    
+    function setupLanguageSwitcher() {
+      const selector = document.getElementById('language-selector');
+      if (selector && !selector.dataset.listenerAttached) {
+        selector.dataset.listenerAttached = 'true';
+        
+        selector.addEventListener('change', function() {
+          const selectedLang = this.value;
+          const currentPath = this.getAttribute('data-current-path') || '/';
+          
+          // Determine the new path based on selected language
+          let newPath = '';
+          
+          // Remove current language prefix
+          let basePath = currentPath;
+          if (basePath.startsWith('/sv')) basePath = basePath.replace('/sv', '') || '/';
+          if (basePath.startsWith('/fa')) basePath = basePath.replace('/fa', '') || '/';
+          
+          // Add target language prefix
+          if (selectedLang === 'sv') {
+            newPath = `/sv${basePath === '/' ? '' : basePath}`;
+          } else if (selectedLang === 'fa') {
+            newPath = `/fa${basePath === '/' ? '' : basePath}`;
+          } else {
+            newPath = basePath;
+          }
+          
+          window.location.href = newPath;
+        });
+      }
+    }
+    
+    // Run on DOM ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', setupLanguageSwitcher);
+    } else {
+      setupLanguageSwitcher();
+    }
+    
+    // Re-run after Astro navigation (for view transitions)
+    document.addEventListener('astro:after-swap', function() {
+      // Reset flag on navigation
+      const selector = document.getElementById('language-selector');
+      if (selector) {
+        selector.removeAttribute('data-listener-attached');
+      }
+      setupLanguageSwitcher();
+    });
+  })();
+</script>
+

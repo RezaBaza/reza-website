@@ -2,12 +2,12 @@
 import Layout from '~/layouts/PageLayout.astro';
 import { getTranslation, type Language } from '~/utils/translations';
 
-const lang: Language = 'en';
+const lang: Language = 'fa';
 const t = getTranslation(lang);
 
 const metadata = {
   title: t.resume.title,
-  description: 'Professional resume of Reza Bazargan.',
+  description: 'رزومه حرفه‌ای رضا بازارگان.',
 };
 ---
 
@@ -23,7 +23,7 @@ const metadata = {
     <p class="text-muted">{t.resume.tagline}</p>
   </div>
   
-  <section class="prose dark:prose-invert max-w-3xl mx-auto my-16 px-4">
+  <section class="prose dark:prose-invert max-w-3xl mx-auto my-16 px-4" dir="rtl">
     <h1 class="text-3xl font-bold">{t.resume.resumeTitle}</h1>
     <p>
       {t.resume.description}
@@ -55,3 +55,4 @@ const metadata = {
     </div>
   </section>
 </Layout>
+

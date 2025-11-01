@@ -3,12 +3,12 @@ import Layout from '~/layouts/PageLayout.astro';
 import Image from '~/components/common/Image.astro';
 import { getTranslation, type Language } from '~/utils/translations';
 
-const lang: Language = 'en';
+const lang: Language = 'sv';
 const t = getTranslation(lang);
 
 const metadata = {
   title: 'Reza Bazargan – Data Strategist & AI Specialist',
-  description: 'Personal website of Reza Bazargan – Data Scientist and PhD in Mathematics.',
+  description: 'Personlig webbplats för Reza Bazargan – Data Scientist och Doktor i Matematik.',
   ignoreTitleTemplate: true,
 };
 ---
@@ -44,19 +44,19 @@ const metadata = {
 
       <ul class="text-left mt-4 list-disc list-inside space-y-2">
         <li>
-          <strong>Data Science and Analytics Leadership:</strong> {t.home.leadership}
+          <strong>Data Science och Analytics Ledarskap:</strong> {t.home.leadership}
         </li>
         <li>
-          <strong>Client Advisory:</strong> {t.home.advisory}
+          <strong>Kundrådgivning:</strong> {t.home.advisory}
         </li>
         <li>
-          <strong>Technical Innovation:</strong> {t.home.innovation}
+          <strong>Teknisk Innovation:</strong> {t.home.innovation}
         </li>
         <li>
-          <strong>Team Development:</strong> {t.home.teamDev}
+          <strong>Teamutveckling:</strong> {t.home.teamDev}
         </li>
         <li>
-          <strong>Stakeholder Management:</strong> {t.home.stakeholder}
+          <strong>Intressenthantering:</strong> {t.home.stakeholder}
         </li>
       </ul>
      <h2 class="text-2xl font-semibold mt-12 text-center">{t.home.technicalSkills}</h2>
@@ -150,7 +150,7 @@ const metadata = {
 
       <p class="mt-6">
         <a href="/posts" class="underline text-blue-600 dark:text-blue-400">{t.home.readPosts}</a> &nbsp;·&nbsp;
-        <a href="/resume" class="underline text-blue-600 dark:text-blue-400">{t.home.viewResume}</a>
+        <a href="/sv/resume" class="underline text-blue-600 dark:text-blue-400">{t.home.viewResume}</a>
       </p>
 
       <p class="mt-6 text-neutral-500 dark:text-neutral-400">
@@ -180,3 +180,4 @@ const metadata = {
     <script src="/js/particles.js" defer></script>
   </div>
 </Layout>
+
