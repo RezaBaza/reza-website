@@ -9,7 +9,7 @@ Mark done: `- [x]`
 
 ## Pending
 
-- [ ] Sweden's AI strategy in five minutes — what public sector leaders need to know | Public Sector & AI | Reference government.se Feb 2026 strategy
+- [x] Sweden's AI strategy in five minutes — what public sector leaders need to know | Public Sector & AI | Reference government.se Feb 2026 strategy
 - [ ] Why most analytics teams struggle to show business impact (and how to fix it) | Data Strategy | Based on Mentimeter experience
 - [ ] The difference between a dashboard and a decision | AI in Practice | Accessible, no jargon
 - [ ] How to evaluate an AI vendor if you're not technical | Public Sector & AI | Written for procurement/management
