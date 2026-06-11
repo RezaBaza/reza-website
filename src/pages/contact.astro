@@ -1,79 +1,144 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import HeroText from '~/components/widgets/HeroText.astro';
-import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contact',
+  title: 'Contact – Reza Bazargan',
+  description: 'Get in touch with Reza Bazargan for data strategy, analytics advisory, or applied AI projects.',
 };
+
+// Replace with your Formspree form ID — sign up free at formspree.io
+const FORMSPREE_ID = 'mqeodnrr';
 ---
 
 <Layout metadata={metadata}>
-  <!-- HeroText Widget ******************* -->
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
+  <!-- Hero -->
+  <section class="max-w-3xl mx-auto px-4 py-16 text-center">
+    <p class="text-sm font-semibold uppercase tracking-widest text-blue-500 mb-3">Contact</p>
+    <h1 class="text-4xl font-bold mb-6">Let's talk</h1>
+    <p class="text-lg text-muted leading-relaxed">
+      Whether you have a specific project in mind, want to explore a collaboration, or just have a question — I'm happy to hear from you. I typically respond within one business day.
+    </p>
+  </section>
 
-  <ContactUs
-    id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
-    inputs={[
-      {
-        type: 'text',
-        name: 'name',
-        label: 'Name',
-      },
-      {
-        type: 'email',
-        name: 'email',
-        label: 'Email',
-      },
-    ]}
-    textarea={{
-      label: 'Message',
-    }}
-    disclaimer={{
-      label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
-    }}
-    description="Our support team typically responds within 24 business hours."
-  />
+  <!-- Form + details -->
+  <section class="max-w-4xl mx-auto px-4 pb-16 grid md:grid-cols-2 gap-12">
 
-  <!-- Features2 Widget ************** -->
+    <!-- Contact form -->
+    <div class="bg-white dark:bg-slate-900 rounded-2xl border border-gray-200 dark:border-gray-700 shadow p-8">
+      <h2 class="text-xl font-semibold mb-6">Send a message</h2>
+      <form
+        action={`https://formspree.io/f/${FORMSPREE_ID}`}
+        method="POST"
+        class="space-y-5"
+      >
+        <div>
+          <label for="name" class="block text-sm font-medium mb-1">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            placeholder="Your name"
+            class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <label for="email" class="block text-sm font-medium mb-1">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="your@email.com"
+            class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <label for="subject" class="block text-sm font-medium mb-1">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            placeholder="What's this about?"
+            class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium mb-1">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            rows={5}
+            required
+            placeholder="Tell me about your project or question..."
+            class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-800 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="w-full py-3 px-6 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors"
+        >
+          Send message
+        </button>
+      </form>
+    </div>
 
-  <Features2
-    title="We are here to help!"
-    items={[
-      {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      },
-      {
-        title: 'Contact sales',
-        description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
-      },
-      {
-        title: 'Technical support',
-        description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
-      },
-      {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
-      },
-      {
-        title: 'Email',
-        description: 'contact@support.com',
-        icon: 'tabler:mail',
-      },
-      {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
-        icon: 'tabler:map-pin',
-      },
-    ]}
-  />
+    <!-- Contact details -->
+    <div class="flex flex-col justify-center gap-8">
+      <div>
+        <h2 class="text-xl font-semibold mb-4">Get in touch directly</h2>
+        <p class="text-muted mb-6">
+          Prefer email? Reach me directly at the address below. For professional networking, LinkedIn is the best place to connect.
+        </p>
+      </div>
+
+      <div class="space-y-5">
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm text-muted">Email</p>
+            <a href="mailto:reza.baza@gmail.com" class="font-medium hover:text-blue-500 transition-colors">reza.baza@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="currentColor" viewBox="0 0 448 512">
+              <path d="M100.28 448H7.4V148.9h92.88zm-46.44-340C24.15 108 0 83.87 0 53.61 0 23.39 24.15 0 53.84 0 83.67 0 108 23.39 108 53.61c0 30.26-24.32 54.39-54.16 54.39zM447.9 448h-92.4V302.4c0-34.7-12.4-58.4-43.4-58.4-23.6 0-37.6 15.8-43.7 31.1-2.3 5.5-2.8 13.2-2.8 21V448h-92.4s1.2-246.6 0-272h92.4v38.5c12.3-19 34.3-45.9 83.3-45.9 60.8 0 106.5 39.7 106.5 125.1V448z"/>
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm text-muted">LinkedIn</p>
+            <a href="https://se.linkedin.com/in/mrezabazargan" target="_blank" class="font-medium hover:text-blue-500 transition-colors">linkedin.com/in/mrezabazargan</a>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center flex-shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <div>
+            <p class="text-sm text-muted">Location</p>
+            <p class="font-medium">Stockholm, Sweden</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pt-4 border-t border-gray-200 dark:border-gray-700">
+        <p class="text-sm text-muted">
+          Available for engagements across the Nordic markets and remotely. Currently based at <strong>Governo Insikt AB</strong>.
+        </p>
+      </div>
+    </div>
+  </section>
+
 </Layout>

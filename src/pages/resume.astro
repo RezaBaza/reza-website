@@ -1,57 +1,246 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
-import { getTranslation, type Language } from '~/utils/translations';
-
-const lang: Language = 'en';
-const t = getTranslation(lang);
 
 const metadata = {
-  title: t.resume.title,
-  description: 'Professional resume of Reza Bazargan.',
+  title: 'Resume – Reza Bazargan',
+  description: 'Professional resume of Reza Bazargan — Senior Data Strategist, Analytics Leader, PhD in Mathematics.',
 };
+
+const experience = [
+  {
+    role: 'Senior Data Strategist & Project Lead',
+    company: 'Governo Insikt AB',
+    period: '2025 – Present',
+    bullets: [
+      'Lead data and AI strategy engagements for complex organisations — defining KPI structures, governance and decision-support capabilities.',
+      'Facilitate workshops translating business needs into analytical requirements, reporting structures and prioritised roadmaps.',
+      'Built Power BI models for S:t Erik Försäkring connecting premium, claims and incident data to improve pricing support and risk analysis.',
+      'Design and run applied AI/LLM workshops anchored in real business needs and practical adoption.',
+    ],
+  },
+  {
+    role: 'Sales & Marketing Analytics Manager',
+    company: 'Mentimeter',
+    period: '2022 – 2024',
+    bullets: [
+      'Designed and implemented the company-wide data strategy and established a unified single source of truth across the full customer journey.',
+      'Built and led the first dedicated analytics team — hiring and mentoring analysts and data scientists.',
+      'Developed forecasting models for business planning with automated daily refreshes surfaced in Looker dashboards.',
+      'Implemented lead scoring for acquisition and churn, integrated with CRM workflows to support commercial prioritisation.',
+      'Drove customer segmentation enabling more personalised communication, targeting and lifecycle management.',
+    ],
+  },
+  {
+    role: 'Growth Manager, Sales & Marketing Analytics',
+    company: 'TallinkSilja AB',
+    period: '2021 – 2022',
+    bullets: [
+      'Led sales and marketing analytics in a Nordic travel business, supporting commercial decisions on campaigns, pricing and customer activity.',
+      'Hired and established the company\'s first data scientist role.',
+      'Built ML-based RFM customer segmentation — piloted in Sweden, rolled out across markets and productionised in CRM.',
+      'Optimised paid media budget allocation through ROI analysis and introduced A/B testing practices.',
+    ],
+  },
+  {
+    role: 'Head of Revenue Management',
+    company: 'TallinkSilja AB',
+    period: '2016 – 2021',
+    bullets: [
+      'Led revenue management and performance reporting for a major Nordic travel brand.',
+      'Led the rollout of Tableau as the company-wide BI platform, giving teams direct access to trusted reporting.',
+      'Built KPI frameworks and near-real-time dashboards for revenue, demand and operational performance.',
+      'Established regular analysis and reporting routines improving decision cadence for commercial stakeholders.',
+    ],
+  },
+  {
+    role: 'Revenue Manager',
+    company: 'eDreams OdigeO / Travellink',
+    period: '2015 – 2016',
+    bullets: [
+      'Worked with commercial performance, pricing and demand analysis in online travel.',
+    ],
+  },
+  {
+    role: 'Pricing Analyst',
+    company: 'OdigeO / Travellink',
+    period: '2013 – 2014',
+    bullets: [
+      'Built early experience in digital commerce analytics, price changes, demand patterns and performance follow-up.',
+    ],
+  },
+];
+
+const academia = [
+  { role: 'Researcher & Lecturer', org: 'KTH Royal Institute of Technology', year: '2013' },
+  { role: 'Visiting Scholar', org: 'University of California, Berkeley', year: '2011' },
+  { role: 'Faculty Member, Dept. of Mathematics', org: 'Azad University, Iran', year: '2002 – 2009' },
+];
+
+const education = [
+  { degree: 'Ph.D. in Mathematics', school: 'Uppsala University', year: '2011 – 2013', note: 'Numerical methods & mathematical modelling' },
+  { degree: 'Licentiate in Mathematics', school: 'Stockholm University', year: '2009 – 2011', note: 'Applied mathematics & analysis' },
+  { degree: 'M.Sc. in Mathematical Analysis', school: 'Iran', year: '2000 – 2002', note: '' },
+];
+
+const skills = [
+  {
+    category: 'Analytics & Data Science',
+    items: ['Python', 'SQL', 'scikit-learn', 'Prophet', 'Predictive modelling', 'Customer segmentation', 'Lead scoring', 'Forecasting', 'A/B testing'],
+  },
+  {
+    category: 'BI & Visualisation',
+    items: ['Tableau', 'Looker', 'Power BI', 'Looker Studio', 'HEX', 'Streamlit', 'Gradio', 'Plotly'],
+  },
+  {
+    category: 'AI & Platforms',
+    items: ['OpenAI API', 'Anthropic API', 'Hugging Face', 'AWS', 'GCP', 'Azure', 'Databricks', 'Snowflake'],
+  },
+  {
+    category: 'Marketing & CRM',
+    items: ['Salesforce', 'HubSpot', 'Google Analytics', 'Adobe Analytics', 'Mixpanel', '6sense', 'Customer.io', 'Google Ads'],
+  },
+];
 ---
 
 <Layout metadata={metadata}>
-<!-- 📸 Profile picture block -->
-  <div class="max-w-3xl mx-auto mt-12 mb-6 px-4 text-center">
+
+  <!-- Header -->
+  <section class="max-w-4xl mx-auto px-4 pt-14 pb-8 flex flex-col md:flex-row items-center md:items-start gap-8">
     <img
       src="/Reza_pic.png"
       alt="Reza Bazargan"
-      class="w-32 h-32 md:w-40 md:h-40 rounded-full mx-auto border-4 border-primary object-cover shadow-lg"
+      class="w-32 h-32 rounded-full border-4 border-primary object-cover shadow-xl flex-shrink-0"
     />
-    <h1 class="text-2xl font-bold mt-4">Reza Bazargan</h1>
-    <p class="text-muted">{t.resume.tagline}</p>
-  </div>
-  
-  <section class="prose dark:prose-invert max-w-3xl mx-auto my-16 px-4">
-    <h1 class="text-3xl font-bold">{t.resume.resumeTitle}</h1>
-    <p>
-      {t.resume.description}
-    </p>
-
-    <h2>{t.resume.skills}</h2>
-    <ul>
-      <li><strong>{t.resume.languages}:</strong> Python, SQL</li>
-      <li><strong>{t.resume.frameworks}:</strong> Hugging Face, OpenAI, scikit-learn</li>
-      <li><strong>{t.resume.biViz}:</strong> Power BI, Tableau, Looker, HEX</li>
-      <li><strong>{t.resume.leadership}:</strong> AI strategy, KPI frameworks, cross-functional mentoring</li>
-    </ul>
-
-    <h2>{t.resume.experience}</h2>
-    <ul>
-      <li><strong>Governo Insikt AB (2025–)</strong> – Senior Data Strategist</li>
-      <li><strong>Mentimeter (2022–2024)</strong> – Analytics Manager</li>
-      <li><strong>TallinkSilja AB (2016–2022)</strong> – Head of Revenue & Growth Analytics</li>
-    </ul>
-
-    <h2>{t.resume.download}</h2>
-    <div class="flex flex-col sm:flex-row gap-4 mt-4">
-      <a href="/RezaBazargan_CV_EN.pdf" target="_blank" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center">
-        {t.resume.downloadEN}
+    <div class="text-center md:text-left">
+      <h1 class="text-3xl font-bold">Reza Bazargan</h1>
+      <p class="text-blue-500 font-medium mt-1">Senior Data Strategist · Analytics Leader · PhD in Mathematics</p>
+      <p class="text-muted mt-3 max-w-xl">
+        10+ years building analytics teams, defining data strategy, and making data actually useful for business decisions — across travel, SaaS, and Nordic markets.
+      </p>
+      <div class="flex flex-wrap gap-3 mt-4 justify-center md:justify-start">
+        <a href="mailto:reza.baza@gmail.com" class="text-sm flex items-center gap-1 text-muted hover:text-blue-500 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          reza.baza@gmail.com
+        </a>
+        <span class="text-sm text-muted flex items-center gap-1">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          Stockholm, Sweden
+        </span>
+        <a href="https://se.linkedin.com/in/mrezabazargan" target="_blank" class="text-sm flex items-center gap-1 text-muted hover:text-blue-500 transition-colors">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zm-46.44-340C24.15 108 0 83.87 0 53.61 0 23.39 24.15 0 53.84 0 83.67 0 108 23.39 108 53.61c0 30.26-24.32 54.39-54.16 54.39zM447.9 448h-92.4V302.4c0-34.7-12.4-58.4-43.4-58.4-23.6 0-37.6 15.8-43.7 31.1-2.3 5.5-2.8 13.2-2.8 21V448h-92.4s1.2-246.6 0-272h92.4v38.5c12.3-19 34.3-45.9 83.3-45.9 60.8 0 106.5 39.7 106.5 125.1V448z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+    <!-- Download buttons -->
+    <div class="md:ml-auto flex flex-col gap-2 flex-shrink-0">
+      <a href="/RezaBazargan_CV_EN.pdf" target="_blank"
+        class="px-5 py-2.5 bg-blue-600 text-white text-sm font-medium rounded-lg hover:bg-blue-700 transition-colors text-center whitespace-nowrap">
+        Download CV (EN)
       </a>
-      <a href="/RezaBazargan_CV_SV.pdf" target="_blank" class="inline-block px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-center">
-        {t.resume.downloadSV}
+      <a href="/RezaBazargan_CV_SV.pdf" target="_blank"
+        class="px-5 py-2.5 border border-current text-sm font-medium rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-center whitespace-nowrap">
+        Download CV (SV)
       </a>
     </div>
   </section>
+
+  <div class="max-w-4xl mx-auto px-4 pb-20 space-y-14">
+
+    <!-- Experience -->
+    <section>
+      <h2 class="text-xl font-bold mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">Experience</h2>
+      <div class="space-y-8">
+        {experience.map((job) => (
+          <div class="flex gap-4">
+            <div class="flex flex-col items-center">
+              <div class="w-3 h-3 rounded-full bg-blue-500 mt-1.5 flex-shrink-0"></div>
+              <div class="w-px bg-gray-200 dark:bg-gray-700 flex-1 mt-1"></div>
+            </div>
+            <div class="pb-6 flex-1">
+              <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+                <h3 class="font-semibold text-base">{job.role}</h3>
+                <span class="text-blue-500 font-medium text-sm">{job.company}</span>
+                <span class="text-muted text-sm ml-auto">{job.period}</span>
+              </div>
+              <ul class="mt-3 space-y-1.5">
+                {job.bullets.map((b) => (
+                  <li class="text-sm text-muted flex gap-2">
+                    <span class="text-blue-400 mt-1 flex-shrink-0">›</span>
+                    <span>{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Academia -->
+    <section>
+      <h2 class="text-xl font-bold mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">Academic Roles</h2>
+      <div class="space-y-3">
+        {academia.map((a) => (
+          <div class="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
+            <span class="font-medium text-sm">{a.role}</span>
+            <span class="text-blue-500 text-sm">{a.org}</span>
+            <span class="text-muted text-sm ml-auto">{a.year}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <h2 class="text-xl font-bold mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">Education</h2>
+      <div class="space-y-4">
+        {education.map((e) => (
+          <div class="flex flex-wrap items-baseline gap-x-3 gap-y-0.5">
+            <span class="font-semibold text-sm">{e.degree}</span>
+            <span class="text-blue-500 text-sm">{e.school}</span>
+            {e.note && <span class="text-muted text-sm">— {e.note}</span>}
+            <span class="text-muted text-sm ml-auto">{e.year}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section>
+      <h2 class="text-xl font-bold mb-6 pb-2 border-b border-gray-200 dark:border-gray-700">Skills</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {skills.map((group) => (
+          <div>
+            <h3 class="text-sm font-semibold text-blue-500 mb-2">{group.category}</h3>
+            <div class="flex flex-wrap gap-2">
+              {group.items.map((item) => (
+                <span class="px-2.5 py-1 text-xs rounded-full bg-gray-100 dark:bg-slate-800 text-gray-700 dark:text-gray-300">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section>
+      <h2 class="text-xl font-bold mb-4 pb-2 border-b border-gray-200 dark:border-gray-700">Languages</h2>
+      <div class="flex flex-wrap gap-6">
+        {[
+          { lang: 'English', level: 'Fluent' },
+          { lang: 'Swedish', level: 'Professional' },
+          { lang: 'Farsi', level: 'Native' },
+        ].map(({ lang, level }) => (
+          <div class="flex items-center gap-2">
+            <span class="font-medium text-sm">{lang}</span>
+            <span class="px-2 py-0.5 text-xs rounded-full bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300">{level}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+  </div>
 </Layout>

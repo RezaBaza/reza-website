@@ -56,11 +56,17 @@ const languages = [
           if (basePath.startsWith('/sv')) basePath = basePath.replace('/sv', '') || '/';
           if (basePath.startsWith('/fa')) basePath = basePath.replace('/fa', '') || '/';
           
+          // Blog posts (e.g. /some-post-slug) don't have translated versions.
+          // Redirect to the posts listing instead of a 404.
+          const knownPrefixes = ['/', '/about', '/services', '/contact', '/resume', '/posts', '/pricing'];
+          const isKnownPage = knownPrefixes.some(p => basePath === p || basePath.startsWith(p + '/') && p !== '/');
+          const isBlogPost = !isKnownPage && basePath !== '/';
+
           // Add target language prefix
           if (selectedLang === 'sv') {
-            newPath = `/sv${basePath === '/' ? '' : basePath}`;
+            newPath = isBlogPost ? '/posts' : `/sv${basePath === '/' ? '' : basePath}`;
           } else if (selectedLang === 'fa') {
-            newPath = `/fa${basePath === '/' ? '' : basePath}`;
+            newPath = isBlogPost ? '/posts' : `/fa${basePath === '/' ? '' : basePath}`;
           } else {
             newPath = basePath;
           }

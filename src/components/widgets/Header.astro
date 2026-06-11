@@ -19,9 +19,13 @@ const getNavPath = (basePath: string) => {
 };
 
 const links = [
+  // nav links
   { text: t.nav.home, href: getNavPath('/') },
+  { text: t.nav.about, href: getNavPath('/about') },
+  { text: t.nav.services, href: getNavPath('/services') },
   { text: t.nav.posts, href: getNavPath('/posts') },
   { text: t.nav.resume, href: getNavPath('/resume') },
+  { text: t.nav.contact, href: getNavPath('/contact') },
 ];
 ---
 <header

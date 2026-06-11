@@ -99,5 +99,18 @@ const { post, url } = Astro.props;
       <PostTags tags={post.tags} class="mr-5 rtl:mr-0 rtl:ml-5" />
       <SocialShare url={url} text={post.title} class="mt-5 sm:mt-1 align-middle text-gray-500 dark:text-slate-600" />
     </div>
+
+    <!-- Comments -->
+    <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+      <h2 class="text-lg font-semibold mb-6">Comments</h2>
+      <script
+        src="https://utteranc.es/client.js"
+        repo="RezaBaza/reza-website"
+        issue-term="pathname"
+        theme="github-dark"
+        crossorigin="anonymous"
+        async
+      ></script>
+    </div>
   </article>
 </section>

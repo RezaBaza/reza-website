@@ -3,8 +3,11 @@ export type Language = 'en' | 'sv' | 'fa';
 export interface Translations {
   nav: {
     home: string;
+    about: string;
+    services: string;
     posts: string;
     resume: string;
+    contact: string;
   };
   home: {
     title: string;
@@ -46,8 +49,11 @@ export const translations: Record<Language, Translations> = {
   en: {
     nav: {
       home: 'Home',
+      about: 'About',
+      services: 'Services',
       posts: 'Posts',
       resume: 'Resume',
+      contact: 'Contact',
     },
     home: {
       title: "Hi, I'm Reza Bazargan 👋",
@@ -87,8 +93,11 @@ export const translations: Record<Language, Translations> = {
   sv: {
     nav: {
       home: 'Hem',
+      about: 'Om mig',
+      services: 'Tjänster',
       posts: 'Inlägg',
       resume: 'CV',
+      contact: 'Kontakt',
     },
     home: {
       title: 'Hej, jag heter Reza Bazargan 👋',
@@ -128,8 +137,11 @@ export const translations: Record<Language, Translations> = {
   fa: {
     nav: {
       home: 'خانه',
+      about: 'درباره من',
+      services: 'خدمات',
       posts: 'پست‌ها',
       resume: 'رزومه',
+      contact: 'تماس',
     },
     home: {
       title: 'سلام، من رضا بازرگان هستم 👋',
