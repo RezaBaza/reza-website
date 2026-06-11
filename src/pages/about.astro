@@ -119,6 +119,60 @@ const metadata = {
     ]}
   />
 
+  <!-- Skills -->
+  <section class="max-w-4xl mx-auto px-4 py-12">
+    <p class="text-sm font-semibold uppercase tracking-widest text-blue-500 mb-6">Skills & tools</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-3">Analytics & data</p>
+        <div class="flex flex-wrap gap-2">
+          {['Python', 'SQL', 'Machine learning', 'Generative AI', 'Statistical modelling', 'R'].map(s => (
+            <span class="text-sm px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-default">{s}</span>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-3">BI & reporting</p>
+        <div class="flex flex-wrap gap-2">
+          {['Tableau', 'Looker', 'Power BI', 'Looker Studio', 'Seaborn', 'Plotly', 'Matplotlib'].map(s => (
+            <span class="text-sm px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-default">{s}</span>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-3">Marketing tech</p>
+        <div class="flex flex-wrap gap-2">
+          {['Salesforce', 'Google Analytics', 'Adobe Analytics', 'HubSpot', 'Mixpanel', '6sense', 'Google Ads'].map(s => (
+            <span class="text-sm px-3 py-1 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 text-default">{s}</span>
+          ))}
+        </div>
+      </div>
+
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-muted mb-4">Languages</p>
+        <div class="space-y-3">
+          {[
+            { lang: 'Swedish', level: 'Fluent', pct: 95 },
+            { lang: 'English', level: 'Fluent', pct: 95 },
+            { lang: 'Farsi', level: 'Native', pct: 100 },
+          ].map(({ lang, level, pct }) => (
+            <div class="flex items-center gap-3">
+              <span class="text-sm w-16 flex-shrink-0">{lang}</span>
+              <div class="flex-1 h-1.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
+                <div class="h-full bg-blue-500 rounded-full" style={`width: ${pct}%`}></div>
+              </div>
+              <span class="text-xs text-muted w-12 text-right">{level}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="max-w-2xl mx-auto px-4 py-16 text-center">
     <h2 class="text-2xl font-bold mb-4">Want to work together?</h2>

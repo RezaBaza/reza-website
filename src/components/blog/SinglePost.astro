@@ -16,6 +16,7 @@ export interface Props {
 }
 
 const { post, url } = Astro.props;
+const utterancesScript = `<script src="https://utteranc.es/client.js" repo="RezaBaza/reza-website" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async><\/script>`;
 ---
 
 <section class="py-8 sm:py-16 lg:py-20 mx-auto">
@@ -103,7 +104,7 @@ const { post, url } = Astro.props;
     <!-- Comments -->
     <div class="mx-auto px-6 sm:px-6 max-w-3xl mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
       <h2 class="text-lg font-semibold mb-6">Comments</h2>
-      <Fragment set:html='<script src="https://utteranc.es/client.js" repo="RezaBaza/reza-website" issue-term="pathname" theme="github-dark" crossorigin="anonymous" async></script>' />
+      <Fragment set:html={utterancesScript} />
     </div>
   </article>
 </section>
