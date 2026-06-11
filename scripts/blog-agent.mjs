@@ -97,7 +97,7 @@ VOICE & STYLE:
 - Professional but warm. This is someone who has worked in data and analytics leadership for 10+ years across SaaS (Mentimeter), public sector (Governo Insikt), academia (Stockholm University), and consulting.
 
 FORMAT:
-- Return ONLY valid markdown. No commentary before or after.
+- Return ONLY valid markdown. No commentary before or after. Do NOT wrap in ```markdown fences.
 - Frontmatter (YAML):
   publishDate: [today's ISO date]T08:00:00Z
   author: Reza Bazargan

@@ -1,4 +1,3 @@
-```markdown
 ---
 publishDate: 2026-06-11T08:00:00Z
 author: Reza Bazargan
@@ -57,4 +56,3 @@ If I had to compress all of this into one idea, it's that impact is a relationsh
 The teams that struggle are usually doing excellent work in isolation. The fix is rarely more data, more tools, or smarter models. It's getting closer to the moment where someone has to choose — and making sure your work is sitting right there when they do.
 
 *Reza Bazargan is a Senior Data Strategist at Governo Insikt AB, where he helps public sector organisations turn data into decisions that actually change how services are run.*
-```
